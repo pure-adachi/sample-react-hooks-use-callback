@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Todo as TodoType } from "../types";
 import Todo from "../Todo";
 
@@ -18,4 +18,4 @@ const TodoList = ({ todos }: Props) => {
   );
 };
 
-export default TodoList;
+export default memo(TodoList);
