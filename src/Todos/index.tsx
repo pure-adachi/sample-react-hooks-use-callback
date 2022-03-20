@@ -7,6 +7,7 @@ const Todos = () => {
   const {
     data: { todos },
     addTodo,
+    delTodo,
   } = TodosStore();
 
   const handleChangeInputText = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +34,7 @@ const Todos = () => {
         />
       </div>
 
-      <TodoList todos={todos} />
+      <TodoList todos={todos} delTodo={delTodo} />
     </div>
   );
 };

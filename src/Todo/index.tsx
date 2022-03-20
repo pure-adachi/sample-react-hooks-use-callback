@@ -3,11 +3,14 @@ import { Todo as TodoType } from "../types";
 
 interface Props {
   todo: TodoType;
+  delTodo: (id: number) => void;
 }
 
-const Todo = ({ todo: { name } }: Props) => {
+const Todo = ({ todo: { id, name }, delTodo }: Props) => {
   const handleClickDeleteTodo = () => {
     if (!window.confirm("Do you want to delete it?")) return;
+
+    delTodo(id);
   };
 
   return (

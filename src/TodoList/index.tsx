@@ -4,15 +4,16 @@ import Todo from "../Todo";
 
 interface Props {
   todos: TodoType[];
+  delTodo: (id: number) => void;
 }
 
-const TodoList = ({ todos }: Props) => {
+const TodoList = ({ todos, delTodo }: Props) => {
   console.log("TodoList");
 
   return (
     <div>
       {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} />
+        <Todo key={todo.id} todo={todo} delTodo={delTodo} />
       ))}
     </div>
   );
