@@ -1,4 +1,9 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  KeyboardEvent,
+  useState,
+  useCallback,
+} from "react";
 import TodoList from "../TodoList";
 import { TodosStore } from "../store";
 
@@ -34,7 +39,7 @@ const Todos = () => {
         />
       </div>
 
-      <TodoList todos={todos} delTodo={delTodo} />
+      <TodoList todos={todos} delTodo={useCallback(delTodo, [])} />
     </div>
   );
 };
